@@ -1,0 +1,16 @@
+{
+  "name": "basecss",
+  "version": "0.1.0",
+  "description": "Base CSS",
+  "main": "index.js",
+  "scripts": {
+    "serve": "sass --watch styles/main.scss public/main.css",
+    "serve:docs": "sass --watch public/styles.scss public/styles.css",
+    "build": "sass styles/main.scss public/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sschandi",
+  "devDependencies": {
+    "sass": "^1.26.11"
+  }
+}
