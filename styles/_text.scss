@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+// Font Family Setups
+$font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+$font-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+$font-base-size: 16px;
+
+// Font Weight Setups
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+$font-body: $font-sans;
+$font-body-weight: $font-weight-regular;
+
+$font-display: $font-sans;
+$font-display-weight: $font-weight-bold;
+
+// Font family types
+.font-sans {
+  font-family: $font-sans;
+}
+.font-serif {
+  font-family: $font-serif;
+}
+.font-mono {
+  font-family: $font-mono;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  font-weight: $font-weight-light;
+}
+.text-regular {
+  font-weight: $font-weight-regular;
+}
+.text-bold {
+  font-weight: $font-weight-bold;
+}

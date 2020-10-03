@@ -1,0 +1,233 @@
+@use 'sass:map';
+@use 'sass:list';
+@import 'utilities/map-reverse.scss';
+@import 'utilities/list-reverse.scss';
+
+$black: #000000;
+$white: #ffffff;
+
+// Content Colours
+$dark: #1d1b1e !default;
+$light: #ffffff !default;
+// Used as the Body Background Color
+$dark-main: #000000 !default;
+$light-main: #fafafa !default;
+// Accent Base Color
+$dark-accent: #25282c !default;
+$light-accent: #f7fafc !default;
+// Used for Text Color
+$dark-color: #fafafa !default;
+$light-color: #1d1b1e !default;
+
+// Colours can be added or overriden in _variables by supplying a $colors variable
+// New colours should supply 9 variations like the defaults
+// Unfortunately SCSS variables cannot be dynamically generated so new color
+// types will have to be custom declared to match generated CSS var (ex: $cyan-100: var(--cyan-100);)
+$colors: () !default;
+$colorMap: map.merge((
+  'gray': (#e5e5ea, #d1d1d6, #c7c7cc, #aeaeb2, #8e8e93, #636366, #48484a, #3a3a3c, #2c2c2e),
+  'red': (#FFF5F5, #FED7D7, #FEB2B2, #FC8181, #F56565, #E53E3E, #C53030, #9B2C2C, #742A2A),
+  'orange': (#FFFAF0, #FEEBC8, #FBD38D, #F6AD55, #ED8936, #DD6B20, #C05621, #9C4221, #7B341E),
+  'yellow': (#FFFFF0, #FEFCBF, #FAF089, #F6E05E, #ECC94B, #D69E2E, #B7791F, #975A16, #744210),
+  'green': (#F0FFF4, #C6F6D5, #9AE6B4, #68D391, #48BB78, #38A169, #2F855A, #276749, #22543D),
+  'teal': (#E6FFFA, #B2F5EA, #81E6D9, #4FD1C5, #38B2AC, #319795, #2C7A7B, #285E61, #234E52),
+  'blue': (#EBF8FF, #BEE3F8, #90CDF4, #63B3ED, #4299E1, #3182CE, #2B6CB0, #2C5282, #2A4365),
+  'indigo': (#EBF4FF, #C3DAFE, #A3BFFA, #7F9CF5, #667EEA, #5A67D8, #4C51BF, #434190, #3C366B),
+  'purple': (#FAF5FF, #E9D8FD, #D6BCFA, #B794F4, #9F7AEA, #805AD5, #6B46C1, #553C9A, #44337A),
+  'pink': (#FFF5F7, #FED7E2, #FBB6CE, #F687B3, #ED64A6, #D53F8C, #B83280, #97266D, #702459),
+), $colors);
+
+// Theme colours can be added or overriden in _variables by supplying a $theme variable
+// New theme items should be a map with 'dark' and 'light' values
+// Unfortunately SCSS variables cannot be dynamically generated so new theme
+// types will have to be custom declared to match generated CSS var (ex: $tertiary: var(--tertiary);)
+$theme: () !default;
+$themeMap: map.merge((
+  'primary': ('light': #007aff, 'dark': #0a84ff),
+  'secondary': ('light': #5856d6, 'dark': #5e5ce6),
+  'accent': ('light': #5ac8fa, 'dark': #64d2ff),
+  'success': ('light': #34c759, 'dark': #30d158),
+  'danger': ('light': #ff3b30, 'dark': #ff453a),
+  'warning': ('light': #ff9500, 'dark': #ff9f0a),
+  'info': ('light': #af52de, 'dark': #bf5af2),
+  'mute': ('light': #c7c7cc, 'dark': #48484a)
+), $theme);
+
+// Shared Values
+:root {
+  --gray: #{list.nth(map.get($colorMap, 'gray'), 5)};
+  --red: #{list.nth(map.get($colorMap, 'red'), 5)};
+  --orange: #{list.nth(map.get($colorMap, 'orange'), 5)};
+  --yellow: #{list.nth(map.get($colorMap, 'yellow'), 5)};
+  --green: #{list.nth(map.get($colorMap, 'green'), 5)};
+  --teal: #{list.nth(map.get($colorMap, 'teal'), 5)};
+  --blue: #{list.nth(map.get($colorMap, 'blue'), 5)};
+  --indigo: #{list.nth(map.get($colorMap, 'indigo'), 5)};
+  --purple: #{list.nth(map.get($colorMap, 'purple'), 5)};
+  --pink: #{list.nth(map.get($colorMap, 'pink'), 5)};
+}
+
+// Light Mode
+:root, html[data-theme='light'] {
+  --bg-main: #{$light-main};
+  --bg-color: #{$light};
+  --bg-accent: #{$light-accent};
+  --color: #{$light-color};
+
+  @each $name, $list in $colorMap {
+    @each $color in $list {
+      $i: index($list, $color);
+      --#{$name}-#{$i}00: #{$color};
+    }
+  }
+
+  @each $name, $map in $themeMap {
+    --#{$name}: #{map.get($map, 'light')}
+  }
+}
+
+// Dark Mode
+html[data-theme='dark'] {
+  --bg-main: #{$dark-main};
+  --bg-color: #{$dark};
+  --bg-accent: #{$dark-accent};
+  --color: #{$dark-color};
+
+  @each $name, $list in $colorMap {
+    $reversedList: listReverse($list);
+    @each $color in $reversedList {
+      $i: index($reversedList, $color);
+      --#{$name}-#{$i}00: #{$color};
+    }
+  }
+
+  @each $name, $map in $themeMap {
+    --#{$name}: #{map.get($map, 'dark')}
+  }
+}
+
+// Manually declaring SCSS variables for global color variables (cannot be dynamically created)
+$bg-main: var(--bg-main);
+$bg-color: var(--bg-color);
+$bg-accent: var(--bg-accent);
+$color: var(--color);
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$accent: var(--accent);
+$success: var(--success);
+$danger: var(--danger);
+$warning: var(--warning);
+$info: var(--info);
+$mute: var(--mute);
+
+$gray: var(--gray);
+$red: var(--red);
+$orange: var(--orange);
+$yellow: var(--yellow);
+$green: var(--green);
+$teal: var(--teal);
+$blue: var(--blue);
+$indigo: var(--indigo);
+$purple: var(--purple);
+$pink: var(--pink);
+
+$gray-100: var(--gray-100);
+$gray-200: var(--gray-200);
+$gray-300: var(--gray-300);
+$gray-400: var(--gray-400);
+$gray-500: var(--gray-500);
+$gray-600: var(--gray-600);
+$gray-700: var(--gray-700);
+$gray-800: var(--gray-800);
+$gray-900: var(--gray-900);
+
+$red-100: var(--red-100);
+$red-200: var(--red-200);
+$red-300: var(--red-300);
+$red-400: var(--red-400);
+$red-500: var(--red-500);
+$red-600: var(--red-600);
+$red-700: var(--red-700);
+$red-800: var(--red-800);
+$red-900: var(--red-900);
+
+$orange-100: var(--orange-100);
+$orange-200: var(--orange-200);
+$orange-300: var(--orange-300);
+$orange-400: var(--orange-400);
+$orange-500: var(--orange-500);
+$orange-600: var(--orange-600);
+$orange-700: var(--orange-700);
+$orange-800: var(--orange-800);
+$orange-900: var(--orange-900);
+
+$yellow-100: var(--yellow-100);
+$yellow-200: var(--yellow-200);
+$yellow-300: var(--yellow-300);
+$yellow-400: var(--yellow-400);
+$yellow-500: var(--yellow-500);
+$yellow-600: var(--yellow-600);
+$yellow-700: var(--yellow-700);
+$yellow-800: var(--yellow-800);
+$yellow-900: var(--yellow-900);
+
+$green-100: var(--green-100);
+$green-200: var(--green-200);
+$green-300: var(--green-300);
+$green-400: var(--green-400);
+$green-500: var(--green-500);
+$green-600: var(--green-600);
+$green-700: var(--green-700);
+$green-800: var(--green-800);
+$green-900: var(--green-900);
+
+$teal-100: var(--teal-100);
+$teal-200: var(--teal-200);
+$teal-300: var(--teal-300);
+$teal-400: var(--teal-400);
+$teal-500: var(--teal-500);
+$teal-600: var(--teal-600);
+$teal-700: var(--teal-700);
+$teal-800: var(--teal-800);
+$teal-900: var(--teal-900);
+
+$blue-100: var(--blue-100);
+$blue-200: var(--blue-200);
+$blue-300: var(--blue-300);
+$blue-400: var(--blue-400);
+$blue-500: var(--blue-500);
+$blue-600: var(--blue-600);
+$blue-700: var(--blue-700);
+$blue-800: var(--blue-800);
+$blue-900: var(--blue-900);
+
+$indigo-100: var(--indigo-100);
+$indigo-200: var(--indigo-200);
+$indigo-300: var(--indigo-300);
+$indigo-400: var(--indigo-400);
+$indigo-500: var(--indigo-500);
+$indigo-600: var(--indigo-600);
+$indigo-700: var(--indigo-700);
+$indigo-800: var(--indigo-800);
+$indigo-900: var(--indigo-900);
+
+$purple-100: var(--purple-100);
+$purple-200: var(--purple-200);
+$purple-300: var(--purple-300);
+$purple-400: var(--purple-400);
+$purple-500: var(--purple-500);
+$purple-600: var(--purple-600);
+$purple-700: var(--purple-700);
+$purple-800: var(--purple-800);
+$purple-900: var(--purple-900);
+
+$pink-100: var(--pink-100);
+$pink-200: var(--pink-200);
+$pink-300: var(--pink-300);
+$pink-400: var(--pink-400);
+$pink-500: var(--pink-500);
+$pink-600: var(--pink-600);
+$pink-700: var(--pink-700);
+$pink-800: var(--pink-800);
+$pink-900: var(--pink-900);

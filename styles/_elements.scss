@@ -1,0 +1,399 @@
+@import 'variables';
+
+// Shadows
+$shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
+$shadow-md: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
+$shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !default;
+.shadow {
+  box-shadow: $shadow;
+}
+.shadow-md {
+  box-shadow: $shadow-md;
+}
+.shadow-lg {
+  box-shadow: $shadow-lg;
+}
+
+$border-radius: 0.25rem !default;
+$border: none !default;
+
+// Images
+// Default images as responsive
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+// Images
+.image {
+  border-radius: $border-radius;
+  margin: 1rem 0;
+}
+.figure {
+  display: inline-block;
+  border-radius: $border-radius;
+  border: 1px solid $gray-100;
+  margin: 1rem 0;
+  overflow: hidden;
+  figcaption {
+    padding: 0.5rem 1rem;
+    background-color: $bg-color;
+  }
+}
+
+// Links
+.link {
+  color: $blue;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:active {
+    color: $blue-700;
+  }
+  &:visited {
+
+  }
+}
+
+// Buttons
+.btn {
+  font-size: $font-base-size;
+  background-color: $gray-100;
+  color: $color;
+  border-radius: $border-radius;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:focus {
+    // Can't RGBA CSS Vars, hardcoding $blue value
+    box-shadow: 0 0 0 2px rgba(#4299E1, 0.45);
+    border-color: $blue;
+    outline: none;    
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  &-compact {
+    padding: 0.25rem 0.5rem;
+  }
+  &-flat {
+    background-color: transparent;
+    color: $color;
+  }
+  &-full {
+    width: 100%;
+  }
+  // map out colours here?
+  &-primary {
+    background-color: $primary;
+    color: $light-main;
+  }
+  &-secondary {
+    background-color: $secondary;
+    color: $light-main;
+  }
+  &-accent {
+    background-color: $accent;
+    color: $dark-main;
+  }
+  &-success {
+    background-color: $success;
+    color: $light-main;
+  }
+  &-danger {
+    background-color: $danger;
+    color: $light-main;
+  }
+  &-warning {
+    background-color: $warning;
+    color: $light-main;
+  }
+  &-info {
+    background-color: $info;
+    color: $light-main;
+  }
+}
+// Links pretending to be buttons
+a.btn {
+  display: inline-block;
+  text-align: center;
+}
+
+// Create a nice group of buttons
+.btn-group {
+  :first-child {
+    margin-left: 0;
+  }
+  :last-child {
+    margin-right: 0;
+  }
+  > * {
+    margin: 0 0.5rem;
+  }
+}
+
+// Inputs
+.input {
+  width: 100%;
+  height: 39px;
+  font-size: $font-base-size;
+  font-family: $font-body;
+  background-color: $bg-color;
+  color: $color;
+  border-radius: $border-radius;
+  box-shadow: none;
+  border: 1px solid $gray-100;
+  padding: 0.5rem 0.75rem;
+  &:focus {
+    // Can't RGBA CSS Vars, hardcoding $blue value
+    box-shadow: 0 0 0 2px rgba(#4299E1, 0.45);
+    outline: none;
+    border: 1px solid $blue;
+  }
+  &::placeholder {
+    opacity: 1;
+    color: $gray-400;
+  }
+  &:disabled {
+    opacity: 0.45;
+    background-color: $gray-300;
+  }
+}
+.textarea {
+  @extend .input;
+  height: auto;
+}
+.select {
+  @extend .input;
+  padding-right: 2rem;
+
+  appearance: none;
+  // add our own caret for the dropdown
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4"><path fill="%238e8e93" d="M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z" /></svg>');
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+  &:invalid {
+    opacity: 1;
+    color: $gray-400;
+  }
+  &:valid {
+    opacity: 1;
+    color: $color;
+  }
+  option {
+    color: $color;
+    &:disabled {
+      color: $gray-400;
+    }
+  }
+}
+/*
+  Custom checkbox, use like this:
+  <label class="checkbox">
+    <input type="checkbox" />
+    <span class="checkmark" />
+  </label>
+*/
+.checkbox {
+  $box-size: 25px;
+
+  position: relative;
+  min-height: $box-size;
+  line-height: $box-size;
+  padding-left: 2.5rem;
+  user-select: none;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $box-size;
+    width: $box-size;
+    border-radius: $border-radius;
+    border: 1px solid $gray-100;
+    background-color: $bg-color;
+    cursor: pointer;
+    &:after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      left: 8px;
+      top: 3px;
+      width: 7px;
+      height: 14px;
+      border: solid $primary;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+      transition: opacity 150ms ease-in;
+    }
+  }
+  input:checked ~ .checkmark:after {
+    display: block;
+    opacity: 1 !important;
+  }
+  input:disabled ~ .checkmark {
+    opacity: 0.45;
+    background-color: $gray-300;
+    cursor: default;
+  }
+}
+.radio {
+  $circle-size: 20px;
+
+  position: relative;
+  line-height: $circle-size;
+  padding-left: 2.5rem;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    appearance: none;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    border: 1px solid $gray-100;
+    background-color: $bg-color;
+    margin: 0 2.5px;
+    transition: border-width 150ms ease-in;
+    cursor: pointer;
+    &:checked {
+      border: 6px solid $primary;
+    }
+    &:disabled {
+      opacity: 0.45;
+      background-color: $gray-300;
+      cursor: default;
+    }
+  }
+}
+.input-field {
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
+.field-group {
+  > * {
+    margin: 1rem 0;
+  }
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Wrap around field input + buttons to create actions connected to input
+// .input-action {
+//   display: flex;
+//   margin-bottom: 0.25rem;
+//   :first-child {
+//     border-radius: $border-radius 0 0 $border-radius;
+//   }
+//   :last-child {
+//     border-radius: 0 $border-radius $border-radius 0 !important;
+//   }
+//   .field__input {
+//     flex-grow: 1;
+//     margin: 0;
+//   }
+//   .btn {
+//     display: flex;
+//     align-items: center;
+//     border-radius: 0;
+//   }
+// }
+
+.list {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+}
+
+.table {
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  border: 1px solid $gray-100;
+
+  overflow-y: auto;
+  table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    > * {
+      border-bottom: 1px solid $gray-100;
+    }
+    > :last-child {
+      border-bottom: none;
+    }
+    thead, tfoot {
+      font-weight: $font-weight-bold;
+      background-color: $blue-100;
+    }
+    th {
+      padding: 0.5rem 1rem;
+    }
+    td {
+      padding: 0.5rem 1rem;
+    }
+  }
+  &-stripped {
+    tbody {
+      > :nth-child(even) {
+        background-color: $bg-accent;
+      }
+    }
+  }
+}
+
+.blockquote {
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  border: 1px solid $gray-100;
+  margin: 0;
+  padding: 1rem 2rem;
+  cite {
+    display: block;
+    padding-top: 0.25rem;
+    &:before {
+      content: '~';
+    }
+  }
+}
+
+.code {
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  border: 1px solid $gray-100;
+  padding: 0 0.25rem;
+}
+pre.code {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid $gray-100;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid $gray-100;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+}
