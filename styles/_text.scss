@@ -1,22 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
 // Font Family Setups
-$font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-$font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
-$font-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-serif: Georgia, Cambria, 'Times New Roman', Times, serif !default;
+$font-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 
-$font-base-size: 16px;
+$font-base-size: 16px !default;
 
 // Font Weight Setups
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-bold: 600;
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 600 !default;
 
-$font-body: $font-sans;
-$font-body-weight: $font-weight-regular;
+$font-body: $font-sans !default;
+$font-body-weight: $font-weight-regular !default;
 
-$font-display: $font-sans;
-$font-display-weight: $font-weight-bold;
+$font-display: $font-sans !default;
+$font-display-weight: $font-weight-bold !default;
 
 // Font family types
 .font-sans {
