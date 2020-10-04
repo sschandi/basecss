@@ -65,6 +65,15 @@ $themeMap: map.merge((
   --indigo: #{list.nth(map.get($colorMap, 'indigo'), 5)};
   --purple: #{list.nth(map.get($colorMap, 'purple'), 5)};
   --pink: #{list.nth(map.get($colorMap, 'pink'), 5)};
+
+  --dark: #1d1b1e;
+  --light: #ffffff;
+  --dark-main: #000000;
+  --light-main: #fafafa;
+  --dark-accent: #25282c;
+  --light-accent: #f7fafc;
+  --dark-color: #fafafa;
+  --light-color: #1d1b1e;
 }
 
 // Light Mode
