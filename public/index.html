@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base CSS</title>
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body id="docs">
+  <div class="docs-sidebar__wrapper">
+    <div class="docs-sidebar">
+      <div class="docs-sidebar__header">
+        <div class="docs-logo">
+          <svg width="100%" height="100%" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <g transform="matrix(1.6935,0,0,1.64305,-452.082,-194.188)">
+                <rect x="326" y="152" width="297" height="541" style="fill:url(#_Linear1);"/>
+            </g>
+            <g transform="matrix(4.58733,0,0,3.432,-1822.09,-754.397)">
+                <path d="M463.893,300.75C463.893,265.014 492.907,236 528.643,236C564.38,236 593.393,265.014 593.393,300.75C593.393,336.486 564.38,365.5 528.643,365.5C523.608,365.5 518.706,364.924 514,363.834L514,367.166C518.706,366.076 523.608,365.5 528.643,365.5C564.38,365.5 593.393,394.514 593.393,430.25C593.393,465.986 564.38,495 528.643,495C492.907,495 463.893,465.986 463.893,430.25L463.893,300.75Z" style="fill:url(#_Linear2);"/>
+            </g>
+            <g transform="matrix(4.58733,0,0,3.432,-1822.09,-754.397)">
+                <path d="M514,319.72L527.275,306.445C533.613,298.207 558.405,259.166 480,236L528.643,236L529.062,236.001C564.606,236.227 593.393,265.153 593.393,300.75C593.393,320.852 584.213,338.827 569.82,350.707L569.633,350.774L555.029,365.377L570.596,380.945C584.542,392.825 593.393,410.512 593.393,430.25C593.393,465.847 564.606,494.773 529.062,494.999L528.643,495L480,495C563.997,470.183 529.552,427.144 526.244,423.279L514,411.035L514,319.72Z" style="fill:url(#_Linear3);"/>
+            </g>
+            <defs>
+                <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0.291399" gradientUnits="userSpaceOnUse" gradientTransform="matrix(503.834,334.208,-433.405,388.517,380.176,317.015)">
+                  <stop offset="0" style="stop-color:rgb(88,86,214);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(60,86,255);stop-opacity:1"/>
+                </linearGradient>
+                <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-123,1.50632e-14,-1.50632e-14,-123,542,365.5)">
+                  <stop offset="0" style="stop-color:rgb(0,122,255);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(0,215,255);stop-opacity:1"/>
+                </linearGradient>
+                <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0.193114" gradientUnits="userSpaceOnUse" gradientTransform="matrix(108,216,-216,108,502,269)">
+                  <stop offset="0" style="stop-color:rgb(90,200,250);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(90,200,200);stop-opacity:1"/>
+                </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1 class="title">Base CSS</h1>
+      </div>
+      <button id="toggle" class="btn btn-primary btn-full">Dark Mode Toggle</button>
+      <nav class="docs-nav">
+        <a href="#colors" class="link link-header">Colors</a>
+        <a href="#base-colors" class="link">Base Colors</a>
+        <a href="#theme-colors" class="link">Theme Colors</a>
+        <a href="#utility-colors" class="link">Utility Colors</a>
+        <a href="#card" class="link link-header">Card</a>
+        <a href="#buttons" class="link link-header">Buttons</a>
+        <a href="#form-els" class="link link-header">Form Elements</a>
+        <a href="#text-els" class="link link-header">Text</a>
+        <a href="#tables" class="link link-header">Tables</a>
+        <a href="#images" class="link link-header">Images</a>
+      </nav>
+    </div>
+  </div>
+  <div class="docs-container container">
+    <div class="docs-header">
+      <h1 class="my-0">Base CSS</h1>
+    </div>
+    <p>Easily bootstrap a new project's CSS</p>
+
+    <article id="colors">
+      <header>
+        <h1>Colors</h1>
+      </header>
+      <p>
+        Color variables allow for built in dark mode by adding a <code class="code">data-theme="dark || light"</code> to your root <code class="code">html</code> element.
+        CSS Variables and SCSS variables are exposed, with the current colour values based on currently set theme. All colour are overridable in the main SCSS file.
+      </p>
+      <h3 id="base-colors">Base Colors</h3>
+      <div class="card color-row" style="flex-wrap: wrap;">
+        <div class="color-item" style="background-color: var(--bg-color);">
+          <span>$bg-color</span>
+          <span>var(--bg-color)</span>
+        </div>
+        <div class="color-item" style="background-color: var(--bg-main);">
+          <span>$bg-main</span>
+          <span>var(--bg-main)</span>
+        </div>
+        <div class="color-item" style="background-color: var(--bg-accent);">
+          <span>$bg-accent</span>
+          <span>var(--bg-accent)</span>
+        </div>
+        <div class="color-item" style="background-color: var(--color); color: var(--bg-main)">
+          <span>$color</span>
+          <span>var(--color)</span>
+        </div>
+      </div>
+      <h3 id="theme-colors">Theme Colors</h3>
+      <div class="card">
+        <h4 class="mt-0">Primary <code class="code">$primary var(--primary)</code></h4>
+        <div class="color-item" style="background-color: var(--primary)"></div>
+        <h4>Secondary <code class="code">$secondary var(--secondary)</code></h4>
+        <div class="color-item" style="background-color: var(--secondary)"></div>
+        <h4>Accent <code class="code">$accent var(--accent)</code></h4>
+        <div class="color-item" style="background-color: var(--accent)"></div>
+        <h4>Success <code class="code">$success var(--success)</code></h4>
+        <div class="color-item" style="background-color: var(--success)"></div>
+        <h4>Danger <code class="code">$danger var(--danger)</code></h4>
+        <div class="color-item" style="background-color: var(--danger)"></div>
+        <h4>Warning <code class="code">$warning var(--warning)</code></h4>
+        <div class="color-item" style="background-color: var(--warning)"></div>
+        <h4>Info <code class="code">$info var(--info)</code></h4>
+        <div class="color-item" style="background-color: var(--info)"></div>
+        <h4>Mute <code class="code">$mute var(--mute)</code></h4>
+        <div class="color-item" style="background-color: var(--mute)"></div>
+      </div>
+      <h3 id="utility-colors">Utility Colors</h3>
+      <div class="card">
+        <h4 class="mt-0">Gray <code class="code">$gray-100 to $gray-900 or var(--gray-100) to var(--gray-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--gray-100)"></div>
+          <div class="color-item" style="background-color: var(--gray-200)"></div>
+          <div class="color-item" style="background-color: var(--gray-300)"></div>
+          <div class="color-item" style="background-color: var(--gray-400)"></div>
+          <div class="color-item" style="background-color: var(--gray-500)"></div>
+          <div class="color-item" style="background-color: var(--gray-600)"></div>
+          <div class="color-item" style="background-color: var(--gray-700)"></div>
+          <div class="color-item" style="background-color: var(--gray-800)"></div>
+          <div class="color-item" style="background-color: var(--gray-900)"></div>
+        </div>
+        <h4>Red <code class="code">$red-100 to $red-900 or var(--red-100) to var(--red-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--red-100)"></div>
+          <div class="color-item" style="background-color: var(--red-200)"></div>
+          <div class="color-item" style="background-color: var(--red-300)"></div>
+          <div class="color-item" style="background-color: var(--red-400)"></div>
+          <div class="color-item" style="background-color: var(--red-500)"></div>
+          <div class="color-item" style="background-color: var(--red-600)"></div>
+          <div class="color-item" style="background-color: var(--red-700)"></div>
+          <div class="color-item" style="background-color: var(--red-800)"></div>
+          <div class="color-item" style="background-color: var(--red-900)"></div>
+        </div>
+        <h4>Orange <code class="code">$orange-100 to $orange-900 or var(--orange-100) to var(--orange-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--orange-100)"></div>
+          <div class="color-item" style="background-color: var(--orange-200)"></div>
+          <div class="color-item" style="background-color: var(--orange-300)"></div>
+          <div class="color-item" style="background-color: var(--orange-400)"></div>
+          <div class="color-item" style="background-color: var(--orange-500)"></div>
+          <div class="color-item" style="background-color: var(--orange-600)"></div>
+          <div class="color-item" style="background-color: var(--orange-700)"></div>
+          <div class="color-item" style="background-color: var(--orange-800)"></div>
+          <div class="color-item" style="background-color: var(--orange-900)"></div>
+        </div>
+        <h4>Yellow <code class="code">$yellow-100 to $yellow-900 or var(--yellow-100) to var(--yellow-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--yellow-100)"></div>
+          <div class="color-item" style="background-color: var(--yellow-200)"></div>
+          <div class="color-item" style="background-color: var(--yellow-300)"></div>
+          <div class="color-item" style="background-color: var(--yellow-400)"></div>
+          <div class="color-item" style="background-color: var(--yellow-500)"></div>
+          <div class="color-item" style="background-color: var(--yellow-600)"></div>
+          <div class="color-item" style="background-color: var(--yellow-700)"></div>
+          <div class="color-item" style="background-color: var(--yellow-800)"></div>
+          <div class="color-item" style="background-color: var(--yellow-900)"></div>
+        </div>
+        <h4>Green <code class="code">$green-100 to $green-900 or var(--green-100) to var(--green-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--green-100)"></div>
+          <div class="color-item" style="background-color: var(--green-200)"></div>
+          <div class="color-item" style="background-color: var(--green-300)"></div>
+          <div class="color-item" style="background-color: var(--green-400)"></div>
+          <div class="color-item" style="background-color: var(--green-500)"></div>
+          <div class="color-item" style="background-color: var(--green-600)"></div>
+          <div class="color-item" style="background-color: var(--green-700)"></div>
+          <div class="color-item" style="background-color: var(--green-800)"></div>
+          <div class="color-item" style="background-color: var(--green-900)"></div>
+        </div>
+        <h4>Teal <code class="code">$teal-100 to $teal-900 or var(--teal-100) to var(--teal-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--teal-100)"></div>
+          <div class="color-item" style="background-color: var(--teal-200)"></div>
+          <div class="color-item" style="background-color: var(--teal-300)"></div>
+          <div class="color-item" style="background-color: var(--teal-400)"></div>
+          <div class="color-item" style="background-color: var(--teal-500)"></div>
+          <div class="color-item" style="background-color: var(--teal-600)"></div>
+          <div class="color-item" style="background-color: var(--teal-700)"></div>
+          <div class="color-item" style="background-color: var(--teal-800)"></div>
+          <div class="color-item" style="background-color: var(--teal-900)"></div>
+        </div>
+        <h4>Blue <code class="code">$blue-100 to $blue-900 or var(--blue-100) to var(--blue-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--blue-100)"></div>
+          <div class="color-item" style="background-color: var(--blue-200)"></div>
+          <div class="color-item" style="background-color: var(--blue-300)"></div>
+          <div class="color-item" style="background-color: var(--blue-400)"></div>
+          <div class="color-item" style="background-color: var(--blue-500)"></div>
+          <div class="color-item" style="background-color: var(--blue-600)"></div>
+          <div class="color-item" style="background-color: var(--blue-700)"></div>
+          <div class="color-item" style="background-color: var(--blue-800)"></div>
+          <div class="color-item" style="background-color: var(--blue-900)"></div>
+        </div>
+        <h4>Indigo <code class="code">$indigo-100 to $indigo-900 or var(--indigo-100) to var(--indigo-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--indigo-100)"></div>
+          <div class="color-item" style="background-color: var(--indigo-200)"></div>
+          <div class="color-item" style="background-color: var(--indigo-300)"></div>
+          <div class="color-item" style="background-color: var(--indigo-400)"></div>
+          <div class="color-item" style="background-color: var(--indigo-500)"></div>
+          <div class="color-item" style="background-color: var(--indigo-600)"></div>
+          <div class="color-item" style="background-color: var(--indigo-700)"></div>
+          <div class="color-item" style="background-color: var(--indigo-800)"></div>
+          <div class="color-item" style="background-color: var(--indigo-900)"></div>
+        </div>
+        <h4>Purple <code class="code">$purple-100 to $purple-900 or var(--purple-100) to var(--purple-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--purple-100)"></div>
+          <div class="color-item" style="background-color: var(--purple-200)"></div>
+          <div class="color-item" style="background-color: var(--purple-300)"></div>
+          <div class="color-item" style="background-color: var(--purple-400)"></div>
+          <div class="color-item" style="background-color: var(--purple-500)"></div>
+          <div class="color-item" style="background-color: var(--purple-600)"></div>
+          <div class="color-item" style="background-color: var(--purple-700)"></div>
+          <div class="color-item" style="background-color: var(--purple-800)"></div>
+          <div class="color-item" style="background-color: var(--purple-900)"></div>
+        </div>
+        <h4>Pink <code class="code">$pink-100 to $pink-900 or var(--pink-100) to var(--pink-900)</code></h4>
+        <div class="color-row">
+          <div class="color-item" style="background-color: var(--pink-100)"></div>
+          <div class="color-item" style="background-color: var(--pink-200)"></div>
+          <div class="color-item" style="background-color: var(--pink-300)"></div>
+          <div class="color-item" style="background-color: var(--pink-400)"></div>
+          <div class="color-item" style="background-color: var(--pink-500)"></div>
+          <div class="color-item" style="background-color: var(--pink-600)"></div>
+          <div class="color-item" style="background-color: var(--pink-700)"></div>
+          <div class="color-item" style="background-color: var(--pink-800)"></div>
+          <div class="color-item" style="background-color: var(--pink-900)"></div>
+        </div>
+      </div>
+    </article>
+
+    <article id="card">
+      <header>
+        <h1>Card</h1>
+      </header>
+      <div class="card">
+        Generic card component.
+      </div>
+    </article>
+
+    <article id="buttons">
+      <header>
+        <h1>Buttons</h1>
+      </header>
+      <div>
+        <button class="btn">Default</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-accent">Accent</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-flat">Flat</button>
+      </div>
+      <h3>Compact</h3>
+      <div>
+        <button class="btn btn-compact">Default</button>
+        <button class="btn btn-primary btn-compact">Primary</button>
+        <button class="btn btn-secondary btn-compact">Secondary</button>
+        <button class="btn btn-accent btn-compact">Accent</button>
+        <button class="btn btn-success btn-compact">Success</button>
+        <button class="btn btn-danger btn-compact">Danger</button>
+        <button class="btn btn-warning btn-compact">Warning</button>
+        <button class="btn btn-info btn-compact">Info</button>
+        <button class="btn btn-flat btn-compact">Flat</button>
+      </div>
+      <h3>Full Width</h3>
+      <div>
+        <button class="btn btn-full mb-2">Default</button>
+        <button class="btn btn-primary btn-full">Primary</button>
+      </div>
+    </article>
+
+    <article id="form-els">
+      <header>
+        <h1>Form Elements</h1>
+      </header>
+      <div class="field-group">
+        <div class="input-field">
+          <label for="text-input">Text Input</label>
+          <input id="text-input" type="text" name="text-input" placeholder="Placeholder" class="input" />
+        </div>
+        <div class="input-field">
+          <label for="select-input">Select Input</label>
+          <select id="select-input" name="select-input" class="select" required>
+            <option disabled hidden selected value="">Select An Option</option>
+            <option value="option-1">Option 1</option>
+            <option value="option-2">Option 2</option>
+            <option value="option-3">Option 3</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <label for="textarea-field">Text Area</label>
+          <textarea id="textarea-field" name="textarea-field" placeholder="Placeholder" rows="5" class="textarea"></textarea>
+        </div>
+        <div class="input-field">
+          <label for="number-field">Disabled Input</label>
+          <input id="number-field" name="number-field" type="number" placeholder="Enter a Number" disabled="disabled" class="input">
+        </div>
+        <div class="input-field">
+          <label for="checkbox" class="checkbox">
+            <input id="checkbox" name="checkbox" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+            Choice A
+          </label>
+          <label for="checkbox2" class="checkbox">
+            <input id="checkbox2" name="checkbox2" type="checkbox" checked="checked" disabled="true">
+            <span class="checkmark"></span>
+            Disabled Checked
+          </label>
+          <label for="checkbox3" class="checkbox">
+            <input id="checkbox3" name="checkbox2" type="checkbox" disabled="true">
+            <span class="checkmark"></span>
+            Disabled Unchecked
+          </label>
+        </div>
+        <div class="input-field">
+          <label for="radio1" class="radio"><input id="radio1" name="radio" type="radio" checked="checked"> Option 1</label>
+          <label for="radio2" class="radio"><input id="radio2" name="radio" type="radio"> Option 2</label>
+          <label for="radio3" class="radio"><input id="radio3" name="radio" type="radio" disabled="true"> Disabed Radio</label>
+          <label for="radio4" class="radio"><input id="radio4" name="radio2" type="radio" checked="checked" disabled="true"> Disabed Selected</label>
+        </div>
+      </div>
+    </article>
+
+    <article id="text-els">
+      <header>
+        <h1>Text</h1>
+      </header>
+      <section>
+        <h1 class="display">.display</h1>
+        <h2 class="title">.title</h2>
+        <p class="subtitle">.subtitle</p>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+      </section>
+      <section>
+        <h3>Ordered List</h3>
+        <ol class="list">
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3</li>
+        </ol>
+        <h3>Unordered List</h3>
+        <ul class="list">
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3</li>
+        </ul>
+        <h3>Horizontal Rule</h3>
+        <hr>
+        <blockquote class="blockquote">
+          <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+          <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+          <cite>Said no one, ever.</cite>
+        </blockquote>
+        <h3>Keyboard</h3>
+        <kbd class="code">Cmd</kbd>
+        <h3>Code</h3>
+        <p>Some Code: <code class="code">&lt;div&gt;code&lt;/div&gt;</code> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quaerat illo, quam veritatis voluptate exercitationem explicabo, aliquid dolorum mollitia suscipit sapiente beatae consectetur, ullam dolorem ea dolores fugit non ipsum. Corporis tenetur iure iusto ipsa pariatur aliquid reprehenderit nulla unde!</p>
+        <h3>Sample</h3>
+        <samp class="code">This is sample output from a computer program.</samp>
+        <h3>Pre</h3>
+        <pre class="code">const user = 'world'
+
+if (user === 'world') {
+  console.log(`Hello ${user}`)
+}</pre>
+      </section>
+      <h2>Text Content</h2>
+      <section class="text-content post">
+        <h2>Heading 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, molestias tenetur. Non perferendis obcaecati reiciendis, sint officiis rerum accusamus nobis? Quam quia vel ex molestias iure sunt animi, aliquam numquam a labore atque quos sequi impedit cupiditate pariatur architecto nobis quasi facere voluptatibus inventore, assumenda id similique! Sequi, temporibus tempore.</p>
+        <a href="#">Link is here</a>
+        <hr>
+        <h2>Another Heading</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium ipsam esse aut delectus. Cupiditate labore nulla odio assumenda totam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur <code>&lt;div&gt;code&lt;/div&gt;</code> adipisicing elit. Quae, praesentium.</p>
+        <pre>const user = 'world'
+
+if (user === 'world') {
+  console.log(`Hello ${user}`)
+}</pre>
+      </section>
+    </article>
+
+    <article id="tables">
+      <header>
+        <h1>Table</h1>
+      </header>
+      <section>
+        <div class="table mb-2">
+          <table>
+            <thead>
+              <tr>
+                <th>Table Heading 1</th>
+                <th>Table Heading 2</th>
+                <th>Table Heading 3</th>
+                <th>Table Heading 4</th>
+                <th>Table Heading 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Table Footer 1</th>
+                <th>Table Footer 2</th>
+                <th>Table Footer 3</th>
+                <th>Table Footer 4</th>
+                <th>Table Footer 5</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="table mb-2">
+          <table>
+            <thead>
+              <tr>
+                <th>Table Heading 1</th>
+                <th>Table Heading 2</th>
+                <th>Table Heading 3</th>
+                <th>Table Heading 4</th>
+                <th>Table Heading 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table table-stripped">
+          <table>
+            <thead>
+              <tr>
+                <th>Table Heading 1</th>
+                <th>Table Heading 2</th>
+                <th>Table Heading 3</th>
+                <th>Table Heading 4</th>
+                <th>Table Heading 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Table Footer 1</th>
+                <th>Table Footer 2</th>
+                <th>Table Footer 3</th>
+                <th>Table Footer 4</th>
+                <th>Table Footer 5</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+    </article>
+    
+    <article id="images">
+      <header>
+        <h1>Images</h1>
+      </header>
+      <h3>Image</h3>
+      <img src="http://placekitten.com/480/480" alt="Image alt text" class="image">
+      <h3>Figure</h3>
+      <figure class="figure"><img src="http://placekitten.com/420/420" alt="Image alt text"></figure>
+      <h3>Figure with Caption</h3>
+      <figure class="figure">
+        <img src="http://placekitten.com/420/420" alt="Image alt text">
+        <figcaption>Here is a caption for this image.</figcaption>
+      </figure>
+    </article>
+  </div>
+
+  <script>
+    var el = document.getElementById('toggle')
+    var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+    if (storedTheme) {
+      document.documentElement.setAttribute('data-theme', storedTheme)
+    }
+
+    el.onclick = () => {
+      var current = document.documentElement.getAttribute('data-theme')
+      var target = current === 'light' ? 'dark' : 'light'
+
+      document.documentElement.setAttribute('data-theme', target)
+      localStorage.setItem('theme', target);
+    }
+  </script>
+</body>
+</html>
