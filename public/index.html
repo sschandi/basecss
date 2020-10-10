@@ -548,7 +548,7 @@ if (user === 'world') {
 
   <script>
     var el = document.getElementById('toggle')
-    var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 
     if (storedTheme) {
       document.documentElement.setAttribute('data-theme', storedTheme)
@@ -559,7 +559,7 @@ if (user === 'world') {
       var target = current === 'light' ? 'dark' : 'light'
 
       document.documentElement.setAttribute('data-theme', target)
-      localStorage.setItem('theme', target);
+      localStorage.setItem('theme', target)
     }
   </script>
 </body>
