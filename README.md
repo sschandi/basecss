@@ -8,7 +8,7 @@
 
 ### Extendable SCSS framework with built in dark mode.
 
-# [View Demo]()
+# [View Demo](https://sschandi.github.io/basecss/)
 
 ## Usage
 
