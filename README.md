@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Base CSS" src="./public/assets/base-css-logo.svg" width="100">
+  <img alt="Base CSS" src="./docs/assets/base-css-logo.svg" width="100">
 </p>
 
 <h1 align="center">

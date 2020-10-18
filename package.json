@@ -4,8 +4,8 @@
   "description": "Base CSS",
   "main": "index.js",
   "scripts": {
-    "serve": "sass --watch styles/main.scss public/main.css",
-    "build": "sass styles/main.scss public/main.css",
+    "serve": "sass --watch styles/main.scss docs/main.css",
+    "build": "sass styles/main.scss docs/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sschandi",
