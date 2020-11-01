@@ -1,6 +1,11 @@
 @import 'variables';
 @import 'spacing';
 
+// Simple Overrides (quickly adjusts some themeing)
+$base-border-radius: 0.25rem;
+$base-border: 1px solid $gray-100;
+$base-shadow: none;
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
