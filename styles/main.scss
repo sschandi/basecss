@@ -58,6 +58,8 @@ h6 {
 .text-content {
   font-size: 1.2rem;
   line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-word;
   &.post {
     max-width: 60ch;
     margin: auto;
@@ -143,7 +145,7 @@ img {
     color: $blue-700;
   }
   &:visited {
-
+    color: $blue;
   }
 }
 
