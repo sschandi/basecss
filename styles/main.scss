@@ -1,11 +1,6 @@
 @import 'variables';
 @import 'spacing';
 
-// Simple Overrides (quickly adjusts some themeing)
-$base-border-radius: 0.25rem;
-$base-border: 1px solid $gray-100;
-$base-shadow: none;
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -56,7 +51,6 @@ h6 {
 }
 
 .text-content {
-  font-size: 1.2rem;
   line-height: 1.5;
   word-wrap: break-word;
   word-break: break-word;
@@ -214,6 +208,7 @@ img {
 }
 // Links pretending to be buttons
 a.btn {
+  text-decoration: none;
   display: inline-block;
   text-align: center;
 }
@@ -233,6 +228,7 @@ a.btn {
 
 // Inputs
 .input {
+  display: block;
   width: 100%;
   height: 39px;
   font-size: $font-base-size;
@@ -245,7 +241,7 @@ a.btn {
   padding: 0.5rem 0.75rem;
   &:focus {
     // Can't RGBA CSS Vars, hardcoding $blue value
-    box-shadow: $base-shadow, 0 0 0 2px rgba(#4299E1, 0.45);
+    box-shadow: 0 0 0 2px rgba(#4299E1, 0.45);
     outline: none;
   }
   &::placeholder {
@@ -256,10 +252,19 @@ a.btn {
     opacity: 0.45;
     background-color: $gray-300;
   }
+  &--compact {
+    height: 32px;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+  &--alt {
+    background-color: $white;
+  }
 }
 .textarea {
   @extend .input;
   height: auto;
+  resize: vertical;
 }
 .select {
   @extend .input;
@@ -393,25 +398,25 @@ a.btn {
 }
 
 // Wrap around field input + buttons to create actions connected to input
-// .input-action {
-//   display: flex;
-//   margin-bottom: 0.25rem;
-//   :first-child {
-//     border-radius: $base-border-radius 0 0 $base-border-radius;
-//   }
-//   :last-child {
-//     border-radius: 0 $base-border-radius $base-border-radius 0 !important;
-//   }
-//   .field__input {
-//     flex-grow: 1;
-//     margin: 0;
-//   }
-//   .btn {
-//     display: flex;
-//     align-items: center;
-//     border-radius: 0;
-//   }
-// }
+.field-action {
+  display: flex;
+  margin-bottom: 0.25rem;
+  :first-child {
+    border-radius: $base-border-radius 0 0 $base-border-radius;
+  }
+  :last-child {
+    border-radius: 0 $base-border-radius $base-border-radius 0 !important;
+  }
+  .field__input {
+    flex-grow: 1;
+    margin: 0;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+  }
+}
 
 .list {
   margin: 0.5rem 0;
