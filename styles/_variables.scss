@@ -35,3 +35,11 @@ $shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
 @import 'colors';
 @import 'text';
+
+// TODO: dark/light buttons (potentially need color-reverse variables to get opposite of current theme colour)
+
+// TODO: rename to just border, etc?
+// Simple Overrides (quickly adjusts some themeing)
+$base-border-radius: 0.25rem;
+$base-border: 1px solid $gray-100;
+$base-shadow: none;
